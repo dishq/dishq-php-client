@@ -126,12 +126,18 @@ class Request
     {
 
         if(is_array($body)){
-          $body = $body['detail'];
+          if($httpStatusCode == 401){
+            $body = $body['detail'];
+          }else{
+            $body = $body['message'];
+          }
+
         }
+
         $description = "The server did not send back a well-formed response. " . PHP_EOL .
                        "Server Response: $body";
         $code = $httpStatusCode;
-        
+
         throw new Errors\ServerError(
             $description,
             ErrorCode::SERVER_ERROR,
