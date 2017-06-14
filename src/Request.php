@@ -17,7 +17,7 @@ class Request
      * @var array
      */
     protected static $headers = array(
-        // 'Razorpay-API'  =>  1,
+
     );
 
     /**
@@ -38,7 +38,7 @@ class Request
 
         $headers = $this->getRequestHeaders();
         $response = Requests::request($url, $headers, $data, $method, $options);
-        // $this->checkErrors($response);
+        $this->checkErrors($response);
         return json_decode($response->body, true);
     }
 
@@ -74,11 +74,13 @@ class Request
         try
         {
             $body = json_decode($response->body, true);
+
         }
         catch (Exception $e)
         {
 
             $this->throwServerError($body, $httpStatusCode);
+
         }
 
         if (($httpStatusCode < 200) or
@@ -122,12 +124,13 @@ class Request
 
     protected function throwServerError($body, $httpStatusCode)
     {
+
         if(is_array($body)){
           $body = $body['detail'];
         }
         $description = "The server did not send back a well-formed response. " . PHP_EOL .
                        "Server Response: $body";
-        $code = 200;
+        $code = $httpStatusCode;
         throw new Errors\ServerError(
             $description,
             ErrorCode::SERVER_ERROR,
