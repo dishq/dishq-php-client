@@ -27,11 +27,7 @@ eg: $add = $api->transaction->insert(3,'av454','10:10',array(array('dish_id' => 
 $api->feedback->insert($user_id,$order_id,$feedback); // Creates order feedback by user
 eg: $feedback = $api->feedback->insert(3,"sh7s", 10);
 
-$api->recommendations->get($user_id,$show_match_scores); // Returns dish recommendations
-eg: $recommend = $api->recommendations->get(10,0);
 
-$api->personalise->get($user_id,$restaurant_id,$show_match_scores); // Returns personalised menu of restaurant
-eg: $personalise = $api->personalise->get(3,739 ,0);
 
 ```
 

@@ -24,6 +24,7 @@ class Transaction extends Entity
 
                 $json_array = ['user_id' => $user_id, 'order_id' => $order_id, 'order_time' => (string)$order_time, 'order_details' => $order_details];
                 $attributes = json_encode($json_array);
+                
                 return parent::create($attributes, $relativeUrl);
               }
 
@@ -36,11 +37,16 @@ class Transaction extends Entity
     }
 
     protected function validArray($order_details){
-      foreach ($order_details as $value){
-        if(!isset($value['dish_id']) || empty($value['dish_id']) || !isset($value['quantity']) || empty($value['quantity'])){
-          return false;
+      if(empty($order_details)){
+        return false;
+      }else{
+        foreach ($order_details as $value){
+          if(!isset($value['dish_id']) || empty($value['dish_id']) || !isset($value['quantity']) || empty($value['quantity'])){
+            return false;
+          }
         }
       }
+
       return true;
     }
 
