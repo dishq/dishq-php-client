@@ -14,7 +14,7 @@ class Recommendations extends Entity
             echo json_encode($error);
          }else{
           if(!is_integer($user_id)) {
-            $error = [ 'message' => 'User id and feedback are integers', 'response' => 'error' ];
+            $error = [ 'message' => 'User id is a integers', 'response' => 'error' ];
              echo json_encode($error);
           }else{
             $attributes = '';
