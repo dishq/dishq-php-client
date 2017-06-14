@@ -94,14 +94,7 @@ class Entity extends Resource implements ArrayableInterface
     protected static function getDefinedEntitiesArray()
     {
         return array(
-            'collection',
-            'payment',
-            'refund',
-            'order',
-            'customer',
-            'add',
-            'message',
-            'token');
+            'token',);
     }
 
     protected static function getEntityClass($name)
