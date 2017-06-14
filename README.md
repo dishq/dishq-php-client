@@ -1,4 +1,4 @@
-# razorpay-php
+# Dishq-php-client
 
 Dishq client PHP Api. The api follows the following practices:
 
@@ -10,9 +10,6 @@ Dishq client PHP Api. The api follows the following practices:
 - A minimum of PHP 5.3 is required
 
 
-Then, run `composer update`. If you are not using composer, download
-the latest release from [the releases section](https://github.com/razorpay/razorpay-php/releases).
-**You should download the `dishq-php-client.zip` file**.
 
 After that include `DishqClient.php` in your application and you can use the
 API as usual.
@@ -33,17 +30,9 @@ $api->personalise->get($user_id,$restaurant_id,$show_match_scores); // Returns p
 
 ```
 
-For further help, see our documentation on <https://docs.razorpay.com>.
 
-[composer-install]: https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx
 
-## Developing
 
-See the [doc.md](doc.md) file for getting started with development.
-
-## License
-
-The Dishq Client PHP SDK is released under the MIT License.
 
 ## Release
 
