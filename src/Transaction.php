@@ -8,11 +8,11 @@ class Transaction extends Entity
     /**
      * @param $id Order id description
      */
-    public function insert($user_id,$order_id,$order_details)
+    public function insert($user_id,$order_id,$order_time,$order_details)
     {
       $relativeUrl = 'order/add/';
 
-       if($user_id === NULL || $user_id === '' || $order_id === NULL || $order_id === '' ){
+       if($user_id === NULL || $user_id === '' || $order_id === NULL || $order_id === '' || $order_time === NULL || $order_id === ''){
       $error = [ 'message' => 'Missing user_id and order_id', 'response' => 'error' ];
        echo json_encode($error);
        }else{
@@ -21,7 +21,8 @@ class Transaction extends Entity
                 $error = [ 'message' => 'User id is an integer', 'response' => 'error' ];
                  echo json_encode($error);
               }else{
-                $json_array = ['user_id' => $user_id, 'order_id' => $order_id, 'order_details' => $order_details];
+
+                $json_array = ['user_id' => $user_id, 'order_id' => $order_id, 'order_time' => (string)$order_time, 'order_details' => $order_details];
                 $attributes = json_encode($json_array);
                 return parent::create($attributes, $relativeUrl);
               }

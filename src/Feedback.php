@@ -8,7 +8,7 @@ class Feedback extends Entity
     /**
      * @param $id Order id description
      */
-    public function insert($user_id,$order_id,$order_time,$feedback)
+    public function insert($user_id,$order_id,$feedback)
     {
 
       if($user_id === NULL || $user_id === '' || $order_id === NULL || $order_id === '' ||  $feedback === NULL || $feedback === ''){
@@ -19,11 +19,10 @@ class Feedback extends Entity
           $error = [ 'message' => 'User id and feedback are integers', 'response' => 'error' ];
            echo json_encode($error);
           }else{
-            $json_array = ['user_id' => $user_id, 'order_id' => $order_id, 'order_time' => $order_time,'feedback' => $feedback];
+            $json_array = ['user_id' => $user_id, 'order_id' => $order_id, 'feedback' => $feedback];
             $attributes = json_encode($json_array);
             $relativeUrl = 'order/feedback/add/';
-            print_r($attributes);
-            // return parent::create($attributes, $relativeUrl);
+            return parent::create($attributes, $relativeUrl);
           }
       }
 
