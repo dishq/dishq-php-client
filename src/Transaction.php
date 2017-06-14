@@ -12,8 +12,8 @@ class Transaction extends Entity
     {
       $relativeUrl = 'order/add/';
 
-       if($user_id === NULL || $user_id === '' || $order_id === NULL || $order_id === '' || $order_time === NULL || $order_id === ''){
-      $error = [ 'message' => 'Missing user_id and order_id', 'response' => 'error' ];
+       if($user_id === NULL || $user_id === '' || $order_id === NULL || $order_id === '' || $order_time === NULL || $order_time === '' || $order_id === ''){
+      $error = [ 'message' => 'Input paratmeter missing', 'response' => 'error' ];
        echo json_encode($error);
        }else{
          if($this->validArray($order_details)){
@@ -24,7 +24,7 @@ class Transaction extends Entity
 
                 $json_array = ['user_id' => $user_id, 'order_id' => $order_id, 'order_time' => (string)$order_time, 'order_details' => $order_details];
                 $attributes = json_encode($json_array);
-                
+
                 return parent::create($attributes, $relativeUrl);
               }
 
