@@ -36,10 +36,6 @@ eg: $personalise = $api->personalise->get(90519,1);
 
 ```
 
-# Notes
-dishq does not take changing inventory into consideration. Please write custom code to do inventory check on top of recommendation list for final results to user.
-
-
 # Release
 
 Steps to follow for a release:
