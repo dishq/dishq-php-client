@@ -28,6 +28,11 @@ $api->feedback->insert($user_id,$order_id,$feedback); // Creates order feedback 
 eg: $feedback = $api->feedback->insert(3,"sh7s", 10);
 
 
+$api->recommendations->get($user_id); // Fetch list of dishes recommended for user
+eg: $recommend = $api->recommendations->get(90519);
+
+$api->personalise->get($user_id,$restaurant_id); // Fetch personalised menu of restaurant of user
+eg: $personalise = $api->personalise->get(90519,1);
 
 ```
 
