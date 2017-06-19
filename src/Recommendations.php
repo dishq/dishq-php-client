@@ -8,7 +8,6 @@ class Recommendations extends Entity
 
     public function get($user_id)
     {
-
          if($user_id === NULL || $user_id === ''){
           $error = [ 'message' => 'Input paratmeter missing', 'response' => 'error' ];
             echo json_encode($error);
@@ -18,7 +17,7 @@ class Recommendations extends Entity
              echo json_encode($error);
           }else{
             $attributes = '';
-            $relativeUrl = '/recommend/dish/?user_id='.$user_id.'&show_match_scores=0';
+            $relativeUrl = '/recommend/dish/?user_id='.$user_id;
             return parent::fetch($attributes,$relativeUrl);
           }
          }

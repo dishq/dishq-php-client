@@ -17,7 +17,7 @@ class Personalise extends Entity
            echo json_encode($error);
         }else{
           $id ='';
-          $relativeUrl = 'recommend/menu/?user_id='.$user_id.'&restaurant_id='.$restaurant_id.'&show_match_scores=0';
+          $relativeUrl = 'recommend/menu/?user_id='.$user_id.'&restaurant_id='.$restaurant_id;
           return parent::fetch($id,$relativeUrl);
         }
       }
