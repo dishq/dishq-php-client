@@ -41,8 +41,8 @@ class Personalise extends Entity
 
       }
       $id ='';
-      print
-              $relativeUrl = 'recommend/menu/?user_id='.$user_id.'&restaurant_id='.join(',',$restaurant_array);
+
+          $relativeUrl = 'recommend/menu/?user_id='.$user_id.'&restaurant_id='.join(',',$restaurant_array);
               return parent::fetch($id,$relativeUrl);
 
     }
