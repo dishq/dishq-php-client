@@ -31,8 +31,8 @@ $api->recommendations->get($user_id, $user_latitude, $user_longitude); // Fetch 
 eg: $recommend = $api->recommendations->get(90519, 12.908496, 77.63806); // when lat lon of user is available
 eg: $recommend = $api->recommendations->get(90519, 0.0, 0.0); // when lat lon is NOT available
 
-$api->personalise->get($user_id, $restaurant_id); // Fetch personalised menu of restaurant of user
-eg: $personalise = $api->personalise->get(90519,1);
+$api->personalise->get($user_id, $restaurant_array); // Fetch personalised menu of restaurant(s) for a user
+eg: $personalise = $api->personalise->get(90519,[31,162]);
 
 ```
 
