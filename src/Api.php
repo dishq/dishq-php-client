@@ -4,7 +4,7 @@ namespace DishqClient\Api;
 
 class Api
 {
-    protected static $baseUrl = 'http://api.dishq.tech/v1/';
+    protected static $baseUrl = 'https://api.dishq.tech/v1/';
 
 
 
